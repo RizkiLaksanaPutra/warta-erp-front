@@ -1,4 +1,3 @@
-// src/middleware.js
 import { NextResponse } from 'next/server';
 
 const PUBLIC_PATHS = [
@@ -35,7 +34,6 @@ export function proxy(req) {
     if (!token) {
         const url = req.nextUrl.clone();
         url.pathname = '/';
-        url.searchParams.set('from', pathname);
         return NextResponse.redirect(url);
     }
 

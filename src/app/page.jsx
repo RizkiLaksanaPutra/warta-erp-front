@@ -36,7 +36,7 @@ export default function Login() {
     return (
         <div className="min-h-screen flex items-center justify-center">
             <div className="flex flex-col items-center justify-center w-sm">
-                <Image src="/logo.png" alt="Logo" width={200} height={200} className="mb-5" />
+                <Image src="/logo.png" alt="Logo" width={200} height={200} loading='lazy' className="mb-5 size-auto" />
 
                 <div className="text-center mb-5">
                     <h1 className="font-semibold text-2xl">Welcome</h1>
@@ -52,7 +52,7 @@ export default function Login() {
                             type="email"
                             id="email"
                             placeholder="Enter your email"
-                            className="mt-1 block w-full rounded-lg border border-primary px-4 py-2 focus:border-secondary focus:ring-2 focus:ring-secondary outline-none"
+                            className="mt-1 block w-full rounded-lg border border-primary px-4 py-2 focus:border-secondary focus:ring-2 focus:ring-secondary outline-none hover:shadow-md transition-shadow"
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -67,7 +67,7 @@ export default function Login() {
                             type="password"
                             id="password"
                             placeholder="Enter your password"
-                            className="mt-2 block w-full rounded-lg border border-primary px-4 py-2 focus:border-secondary focus:ring-2 focus:ring-secondary outline-none"
+                            className="mt-2 block w-full rounded-lg border border-primary px-4 py-2 focus:border-secondary focus:ring-2 focus:ring-secondary outline-none hover:shadow-md transition-shadow"
                             required
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -76,9 +76,9 @@ export default function Login() {
 
                     <button
                         type="submit"
-                        className="w-full mt-5 bg-primary text-white font-semibold py-2 rounded-lg hover:bg-secondary transition cursor-pointer"
+                        className="w-full mt-5 bg-primary text-white font-semibold py-2 rounded-lg hover:bg-secondary hover:shadow-md transition cursor-pointer"
                     >
-                        {loading ? 'wait' : 'Login'}
+                        {loading ? 'Loading..' : 'Login'}
                     </button>
                 </form>
             </div>
